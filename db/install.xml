@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/training_letter/db" VERSION="20261027" COMMENT="Training request letter tables">
+  <TABLES>
+    <TABLE NAME="local_training_letter" COMMENT="Training letter requests">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="studentname" TYPE="char" LENGTH="100" NOTNULL="true" />
+        <FIELD NAME="rollno" TYPE="char" LENGTH="50" NOTNULL="true" />
+        <FIELD NAME="branch" TYPE="char" LENGTH="100" NOTNULL="true" />
+        <FIELD NAME="semester" TYPE="int" LENGTH="2" NOTNULL="true" />
+        <FIELD NAME="organization" TYPE="char" LENGTH="255" NOTNULL="true" />
+        <FIELD NAME="postaladdress" TYPE="text" NOTNULL="true" />
+        <FIELD NAME="trainingtype" TYPE="char" LENGTH="30" NOTNULL="true" />
+        <FIELD NAME="trainingtitle" TYPE="char" LENGTH="255" NOTNULL="true" />
+        <FIELD NAME="duration" TYPE="char" LENGTH="50" NOTNULL="true" />
+        <FIELD NAME="startdate" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="status" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="pending" />
+        <FIELD NAME="coordinatornote" TYPE="text" NOTNULL="false" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" />
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+        <KEY NAME="user_fk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="userid_idx" UNIQUE="false" FIELDS="userid" />
+        <INDEX NAME="status_idx" UNIQUE="false" FIELDS="status" />
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

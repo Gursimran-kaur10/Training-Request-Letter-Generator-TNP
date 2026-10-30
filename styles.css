@@ -1,0 +1,95 @@
+/* Simple blue and white styling for the Training Request Letter pages. */
+
+.training-letter-portal,
+.training-letter-page {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+}
+
+.training-letter-portal {
+    padding: 1.25rem;
+    background: #f4f8ff;
+    border-radius: 1rem;
+}
+
+.training-letter-hero {
+    padding: 3rem 2rem;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(130deg, #164e9b, #2385d8);
+    border-radius: 1rem;
+    box-shadow: 0 12px 28px rgba(23, 78, 145, .16);
+}
+
+.training-letter-eyebrow {
+    display: inline-block;
+    margin-bottom: .55rem;
+    color: #1760a7;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.training-letter-hero .training-letter-eyebrow { color: #dcecff; }
+.training-letter-hero h2 { margin: .2rem 0 .8rem; color: #fff; font-size: 2rem; font-weight: 700; }
+.training-letter-hero-text { max-width: 700px; margin: 0 auto; color: #edf6ff; font-size: 1.05rem; line-height: 1.7; }
+.training-letter-section-title { margin: 2rem 0 1rem; color: #153b68; font-weight: 700; }
+
+.training-letter-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.training-letter-card,
+.training-letter-panel,
+.training-letter-form-card {
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #dce7f4;
+    border-radius: .85rem;
+    box-shadow: 0 6px 18px rgba(27, 66, 112, .07);
+}
+
+.training-letter-card { display: flex; min-height: 220px; flex-direction: column; align-items: flex-start; }
+.training-letter-card-number { display: inline-flex; width: 2.25rem; height: 2.25rem; align-items: center; justify-content: center; margin-bottom: .8rem; color: #155ca8; font-weight: 700; background: #e9f3ff; border-radius: 50%; }
+.training-letter-card h4 { margin: 0 0 .5rem; color: #173c68; font-weight: 700; }
+.training-letter-card p { color: #53677d; line-height: 1.6; }
+.training-letter-card .btn { margin-top: auto; }
+.training-letter-count { color: #155ca8 !important; font-weight: 700; }
+.training-letter-help { color: #5b6b7c; }
+.training-letter-page { padding: .5rem 0 1.5rem; }
+.training-letter-back { display: inline-block; margin: 0 0 1rem .2rem; font-weight: 600; }
+.training-letter-panel h2,
+.training-letter-form-card h2 { color: #173c68; }
+.training-letter-form-card { max-width: 900px; margin: 0 auto; padding: clamp(1.25rem, 3vw, 2.25rem); }
+
+.training-letter-form-card .mform fieldset { margin: 1rem 0; padding: 0 0 1rem; border: 0; border-bottom: 1px solid #e2eaf3; }
+.training-letter-form-card .mform legend,
+.training-letter-form-card .mform .fheader { color: #173c68; font-size: 1.15rem; font-weight: 700; }
+.training-letter-form-card .mform input.form-control,
+.training-letter-form-card .mform select.form-control,
+.training-letter-form-card .mform textarea.form-control,
+.training-letter-review-form .mform input.form-control,
+.training-letter-review-form .mform select.form-control,
+.training-letter-review-form .mform textarea.form-control { border-color: #c8d7e8; border-radius: .45rem; }
+
+.training-letter-table { width: 100%; margin: 1rem 0 0; border: 1px solid #dce7f4; border-radius: .65rem; overflow: hidden; }
+.training-letter-table thead th { color: #fff; background: #155ca8; border-color: #155ca8; }
+.training-letter-table tbody tr:nth-child(even) { background: #f5f9ff; }
+.training-letter-status { display: inline-block; padding: .25rem .65rem; font-size: .85rem; font-weight: 700; border-radius: 999px; }
+.training-letter-status-pending { color: #805500; background: #fff2cc; }
+.training-letter-status-approved { color: #17633a; background: #dff5e8; }
+.training-letter-status-rejected { color: #a52d35; background: #fde6e7; }
+
+.training-letter-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .25rem 1.5rem; margin: 1rem 0 1.5rem; padding: 1rem; background: #f4f8ff; border-radius: .65rem; }
+.training-letter-details p { margin: .35rem 0; }
+
+@media (max-width: 600px) {
+    .training-letter-portal { padding: .75rem; }
+    .training-letter-hero { padding: 2rem 1.25rem; }
+    .training-letter-hero h2 { font-size: 1.6rem; }
+    .training-letter-panel,
+    .training-letter-form-card { padding: 1rem; }
+}
