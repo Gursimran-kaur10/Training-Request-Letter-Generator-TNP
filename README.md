@@ -217,40 +217,6 @@ $pdf->Output($filename, $outputmode);
 | PDF opens as an error | Check Moodle's PHP error log and confirm the Moodle installation includes/enables its standard PDF library. |
 | Navigation link is missing | Purge Moodle caches, then confirm the logged-in user has the matching capability. |
 
-## Interview explanation
-
-### 30-second overview
-
-> “I built a Moodle local plugin for training request letters. Students submit their training and company details using Moodle's Form API. The plugin saves each request in a Moodle database table using the `$DB` API and starts it in Pending status. A coordinator with the right Moodle capability can review and approve or reject it. After approval, the student can preview or download a PDF generated with Moodle's bundled PDF library. I used Moodle capabilities and server-side checks so users cannot access coordinator pages or download an unapproved letter just by guessing a URL.”
-
-### Common questions
-
-**Why is this a local plugin?**  
-The task describes a site-level Moodle extension under `local/training_letter`, rather than a course activity. Moodle's local plugin type fits custom site functionality that does not need to be a separate activity type.
-
-**What does `version.php` do?**  
-It identifies the plugin component and its version, and declares the minimum Moodle version. Moodle checks it during installation and upgrades.
-
-**What does `install.xml` do?**  
-It describes the plugin database table in Moodle's XMLDB format. Moodle can translate that portable definition to the database engine configured by the site.
-
-**Why use `$DB` instead of writing SQL?**  
-`$DB` is Moodle's database layer. It uses Moodle's configured connection and provides database-independent operations such as `insert_record`, `get_records`, and `update_record`.
-
-**How does approval work?**  
-New requests are stored as Pending. A coordinator with the approve capability updates the status. The PDF endpoint checks for Approved status before returning a letter.
-
-**What is a Moodle capability?**  
-A capability is a permission that Moodle assigns to roles in a context. This plugin defines submit, view-all, and approve permissions in `db/access.php` and checks them in the page scripts.
-
-**Does this create a separate API endpoint?**  
-No. It is a server-rendered Moodle plugin using Moodle forms and page scripts. It uses Moodle's PHP APIs and `$DB`, rather than building a standalone REST API.
-
-**Is this the institution's final official letterhead?**  
-No. This sample creates an approval-gated PDF with a basic header and signature placeholder. The institution should provide and approve the actual letterhead, exact wording, and signature process before using it as an official document.
-
-**What could be improved next?**  
-Add an approval history/audit trail, configurable institution details, a reviewed official letterhead, automated coordinator notifications, and automated Moodle plugin tests.
 
 ## Official Moodle references
 
